@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="@string/title_text"
+            android:text="Libreta de Vacunacion"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="36sp" />
@@ -38,13 +38,19 @@
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/signed_out"
+            android:text="Desconectado"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
-
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"/>
         <TextView
             android:id="@+id/detail"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fadeScrollbars="true"
             android:gravity="center"
@@ -78,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:visibility="visible"
+            android:text="Iniciar sesión"
             tools:visibility="gone" />
 
         <LinearLayout
@@ -96,7 +103,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/sign_out"
+                android:text="SALIR"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
 
             <Button
@@ -104,7 +111,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/disconnect"
+                android:text="desconectar"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
         </LinearLayout>
 
