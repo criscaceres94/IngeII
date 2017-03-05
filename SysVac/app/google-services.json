@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "543536162388",
+    "project_id": "firebase-sysvac"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543536162388:android:27d689d63f1b7a06",
+        "android_client_info": {
+          "package_name": "com.google.samples.quickstart.signin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543536162388-4n2n06gr8ivthqpvkaibhubaf189huo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjJWiwthSTF9WjEkQtlCk4omkAPuafgj4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543536162388:android:7de11c84b65d3a20",
+        "android_client_info": {
+          "package_name": "example.com.sysvac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543536162388-pmd18sqjm9dn5alei5t27f5c7bk32vum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "example.com.sysvac",
+            "certificate_hash": "b2b5fa991bf8e1a8c7e11dbc19e2c4c778e3f1d8"
+          }
+        },
+        {
+          "client_id": "543536162388-4n2n06gr8ivthqpvkaibhubaf189huo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjJWiwthSTF9WjEkQtlCk4omkAPuafgj4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
