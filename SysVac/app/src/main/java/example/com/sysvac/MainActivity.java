@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements
 
     // [START signOut]
     private void signOut() {
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+        /*Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
                 new ResultCallback<Status>() {
                     @Override
                     public void onResult(Status status) {
@@ -144,7 +144,9 @@ public class MainActivity extends AppCompatActivity implements
                         updateUI(false);
                         // [END_EXCLUDE]
                     }
-                });
+                });*/
+        Intent intent = new Intent(this, MostrarDatos.class);
+        startActivity(intent);
     }
     // [END signOut]
 

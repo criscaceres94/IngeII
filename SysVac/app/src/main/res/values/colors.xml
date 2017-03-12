@@ -5,4 +5,13 @@
     <color name="blue_grey_700">#455A64</color>
     <color name="blue_grey_800">#37474F</color>
     <color name="blue_grey_900">#263238</color>
+    <color name="gris">#bcbcbc</color>
+    <color name="gris_medio">#bcbcbc</color>
+    <color name="gris_claro">#d9d9d9</color>
+    <color name="gris_oscuro">#747474</color>
+    <color name="negro">#000000</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="naranja_claro">#ff9d2d</color>
+    <color name="naranja_oscuro">#f18000</color>
+    <color name="naranja_medio">#ff8800</color>
 </resources>
