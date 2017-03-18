@@ -60,7 +60,7 @@ public class DB extends SQLiteOpenHelper {
                 valores.put("nombres", "Juan gregorio");
                 valores.put("apellidos", "Caceres Pérez");
                 valores.put("lugar_nacimiento", "asuncion");
-                valores.put("fecha_nacimiento", "08/03/2017");
+                valores.put("fecha_nacimiento", "08/03/2016");
                 valores.put("sexo", "M");
                 valores.put("nacionalidad", "Paraguaya");
                 valores.put("id_usuario", "1");
@@ -108,53 +108,53 @@ public class DB extends SQLiteOpenHelper {
                 vacuna.toContentValues());
     }
     public void insertarDatos( SQLiteDatabase sqLiteDatabase) {
-        insertarVacunas(sqLiteDatabase, new Vacuna(1, "BCG",1 , 0, "08/03/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(1, "BCG",1 , 0, "08/03/2016",
                 "BXAS22", "Marcos", "unica dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(2, "ROTAVIRUS",1 , 0, "08/05/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(2, "ROTAVIRUS",1 , 0, "08/05/2016",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
         insertarVacunas(sqLiteDatabase, new Vacuna(3, "IPV",1 , 0, "08/05/2017",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(4, "PCV 10 VALENTE",1 , 0, "08/05/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(4, "PCV 10 VALENTE",1 , 0, "08/05/2016",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(5, "PENTAVALENTE",1 , 0, "08/05/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(5, "PENTAVALENTE",1 , 0, "08/05/2016",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(6, "OPV/IPV",2 , 0, "08/07/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(6, "OPV/IPV",2 , 0, "08/07/2016",
                 "BXAS22", "Marcos", "segunda dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(7, "ROTAVIRUS",2 , 0, "08/07/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(7, "ROTAVIRUS",2 , 0, "08/07/2016",
                 "BXAS22", "Marcos", "segunda dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(8, "PCV 10 VALENTE",2 , 0, "08/07/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(8, "PCV 10 VALENTE",2 , 0, "08/07/2016",
                 "BXAS22", "Marcos", "segunda dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(9, "PENTAVALENTE",2 , 0, "08/07/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(9, "PENTAVALENTE",2 , 0, "08/07/2016",
                 "BXAS22", "Marcos", "segunda dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(10, "OPV/IPV",3 , 0, "08/09/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(10, "OPV/IPV",3 , 0, "08/09/2016",
                 "BXAS22", "Marcos", "tercera dosis",1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(11, "PENTAVALENTE",3 , 0, "08/09/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(11, "PENTAVALENTE",3 , 0, "08/09/2016",
                 "BXAS22", "Marcos", "tercera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(12, "INFLUENZA 1RA",1 , 0, "08/09/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(12, "INFLUENZA 1RA",1 , 0, "08/09/2016",
                 "BXAS22", "Marcos", "tercera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(13, "INFLUENZA 1RA",2 , 0, "08/09/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(13, "INFLUENZA 1RA",2 , 0, "08/09/2016",
                 "BXAS22", "Marcos", "tercera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(14, "S.P.R",1 , 1, "08/03/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(14, "S.P.R",1 , 1, "08/03/2017",
                 "BXAS22", "Marcos", "al 1 año", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(15, "PCV 10 REF",2 , 1, "08/03/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(15, "PCV 10 REF",2 , 1, "08/03/2017",
                 "BXAS22", "Marcos", "al 1 año", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(16, "AA",1 , 1, "08/03/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(16, "AA",1 , 1, "08/03/2017",
                 "BXAS22", "Marcos", "al 1 año", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(17, "INFLUENZA",3 , 1, "08/03/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(17, "INFLUENZA",3 , 1, "08/03/2017",
                 "BXAS22", "Marcos", "al 1 año", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(18," V.V.Z",1 , 1, "08/06/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(18," V.V.Z",1 , 1, "08/06/2017",
                 null, null, "al año y 3 meses", 1,0));
-        insertarVacunas(sqLiteDatabase, new Vacuna(19, " V.H.A",1 ,1, "08/06/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(19, " V.H.A",1 ,1, "08/06/2017",
                 null, null, "al año y 3 meses", 1,0));
-        insertarVacunas(sqLiteDatabase, new Vacuna(20, "OPV/IPV",5 , 0, "08/09/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(20, "OPV/IPV",5 , 0, "08/09/2017",
                 null, null, "1er refuezo", 1,0));
-        insertarVacunas(sqLiteDatabase, new Vacuna(21, "D.T.P",1 , 0, "08/09/2018",
+        insertarVacunas(sqLiteDatabase, new Vacuna(21, "D.T.P",1 , 0, "08/09/2017",
                 null, null, "1er refuezo", 1,0));
-        insertarVacunas(sqLiteDatabase, new Vacuna(22, "OPV/IPV",6 , 1, "08/03/2021",
+        insertarVacunas(sqLiteDatabase, new Vacuna(22, "OPV/IPV",6 , 1, "08/03/2020",
                 null, null, "2do refuerzo", 1,0));
-        insertarVacunas(sqLiteDatabase, new Vacuna(23, "D.T.P",2 , 1, "08/03/2021",
+        insertarVacunas(sqLiteDatabase, new Vacuna(23, "D.T.P",2 , 1, "08/03/2020",
                 null, null, "2do refuerzo", 1,0));
-        insertarVacunas(sqLiteDatabase, new Vacuna(24, "S.P.R",2 , 4, "08/03/2021",
+        insertarVacunas(sqLiteDatabase, new Vacuna(24, "S.P.R",2 , 4, "08/03/2020",
                 null, null, "2do refuerzo", 1,0));
 
 
