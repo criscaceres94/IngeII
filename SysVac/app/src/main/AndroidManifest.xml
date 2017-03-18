@@ -29,7 +29,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".MostrarDatos" />
-        <activity android:name=".Siguiente" />
+        <activity android:name=".MostrarVacunas" />
+        <activity android:name=".Lista"></activity>
     </application>
 
 </manifest>

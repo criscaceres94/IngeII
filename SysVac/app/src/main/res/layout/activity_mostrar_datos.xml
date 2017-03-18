@@ -145,24 +145,45 @@
                 android:textSize="18dp"
                 android:gravity="left"
                 android:layout_centerHorizontal="true"/>
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+            <LinearLayout
+                android:id="@+id/sign_out_and_disconnect"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="visible"
+                tools:visibility="visible"
+                android:layout_below="@+id/temail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+                <Button
+                    android:onClick="mostrarMas"
+                    android:id="@+id/mostrarmas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mostrar mas"
+                    android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+                <Button
+                    android:onClick="siguiente1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/siguiente"
+                    android:text="Siguiente"
+                    android:theme="@style/ThemeOverlay.MyDarkButton"/>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
     </ScrollView>
 
-    <Button
-        android:onClick="siguiente1"
-        android:background="@drawable/estilo_boton1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/siguiente"
-        android:text="Siguiente"
-        android:textColor="@color/negro"
-        android:typeface="sans"
-        android:textSize="20dp"
-        android:gravity="center_horizontal|center_vertical|center"
-        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import example.com.sysvac.entidades.Hijo;
-
+/**
+ * Created by Jose Alvarez on 10/3/2017.
+ */
 
 public class MostrarDatos extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -29,9 +31,11 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
     protected TextView tdireccionCli;
     protected TextView ttelefonoCli;
     protected TextView tcorreoCli;
+
     protected List<Hijo> hijoList = new ArrayList<Hijo>();
     protected List<String> nombreClientes = new ArrayList<String>();
     public static Hijo clienteSeleccionado = new Hijo();
+    public int posi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -99,7 +103,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
 
         // Muestra el elemento seleccionado y pone los datos de contacto en la pantalla
         if(position == 0){
-            Toast.makeText(parent.getContext(), "Seleccione un hij@ ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent.getContext(), "Seleccione un hijo/a ", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(parent.getContext(), "Seleccionó: " + item, Toast.LENGTH_SHORT).show();
         }
@@ -128,6 +132,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
 
         // Extrae el cliente seleccionado a una variable para su uso en otras actividades
         clienteSeleccionado = hijoList.get(position);
+        posi=position;
     }
 
     public void onNothingSelected(AdapterView<?> arg0) {
@@ -139,12 +144,25 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
 
         if (clienteSeleccionado != null
                 & clienteSeleccionado != hijoList.get(0)){
-            Intent intento = new Intent(MostrarDatos.this, Siguiente.class);
+            Intent intento = new Intent(MostrarDatos.this, MostrarVacunas.class);
+            intento.putExtra("parametro",posi);
             startActivity(intento);
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
         }
         else{
-            Toast.makeText(v.getContext(), "Debe seleccionar un hij@!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(), "Debe seleccionar un hijo/a!", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void mostrarMas(View v){
+        if (clienteSeleccionado != null
+                & clienteSeleccionado != hijoList.get(0)){
+            Intent intento = new Intent(MostrarDatos.this, Lista.class);
+            intento.putExtra("parametro",posi);
+            startActivity(intento);
+            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+        }
+        else{
+            Toast.makeText(v.getContext(), "Debe seleccionar un hijo/a!", Toast.LENGTH_SHORT).show();
         }
     }
 
