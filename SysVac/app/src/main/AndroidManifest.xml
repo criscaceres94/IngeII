@@ -30,7 +30,7 @@
 
         <activity android:name=".MostrarDatos" />
         <activity android:name=".MostrarVacunas" />
-        <activity android:name=".Lista"></activity>
+        <activity android:name=".Lista"/>
     </application>
 
 </manifest>
