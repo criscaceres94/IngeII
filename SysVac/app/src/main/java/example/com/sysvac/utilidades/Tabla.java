@@ -46,7 +46,7 @@ public class Tabla {
     {
         TableRow.LayoutParams layoutCelda;
         TableRow fila = new TableRow(actividad);
-        TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+        TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         fila.setLayoutParams(layoutFila);
 
         String[] arraycabecera = rs.getStringArray(recursocabecera);
@@ -55,7 +55,7 @@ public class Tabla {
         for(int i = 0; i < arraycabecera.length; i++)
         {
             TextView texto = new TextView(actividad);
-            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(arraycabecera[i]), TableRow.LayoutParams.WRAP_CONTENT);
+            layoutCelda = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
             texto.setText(arraycabecera[i]);
             texto.setGravity(Gravity.CENTER_HORIZONTAL);
             texto.setTextAppearance(actividad, R.style.estilo_celda);
@@ -78,7 +78,7 @@ public class Tabla {
     public void agregarFilaTabla(ArrayList<String> elementos)
     {
         TableRow.LayoutParams layoutCelda;
-        TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+        TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         TableRow fila = new TableRow(actividad);
         fila.setLayoutParams(layoutFila);
 
@@ -89,7 +89,7 @@ public class Tabla {
             texto.setGravity(Gravity.CENTER_HORIZONTAL);
             texto.setTextAppearance(actividad, R.style.estilo_celda);
             texto.setBackgroundResource(R.drawable.tabla_celda);
-            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto.getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
+            layoutCelda = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
             texto.setLayoutParams(layoutCelda);
 
             fila.addView(texto);
@@ -109,7 +109,7 @@ public class Tabla {
     {
         Paint p = new Paint();
         Rect bounds = new Rect();
-        p.setTextSize(50);
+        p.setTextSize(20);
 
         p.getTextBounds(texto, 0, texto.length(), bounds);
         return bounds.width();

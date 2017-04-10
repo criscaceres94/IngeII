@@ -3,6 +3,7 @@ package example.com.sysvac;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -95,6 +96,7 @@ public class DB extends SQLiteOpenHelper {
         } catch (Exception e) {
             System.out.println("no se cargo nada");
         }
+        db.execSQL("CREATE TABLE IF NOT EXISTS OK(BANDERA TEXT);");
     }
 
     @Override
@@ -112,7 +114,7 @@ public class DB extends SQLiteOpenHelper {
                 "BXAS22", "Marcos", "unica dosis", 1,1));
         insertarVacunas(sqLiteDatabase, new Vacuna(2, "ROTAVIRUS",1 , 0, "08/05/2016",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
-        insertarVacunas(sqLiteDatabase, new Vacuna(3, "IPV",1 , 0, "08/05/2017",
+        insertarVacunas(sqLiteDatabase, new Vacuna(3, "IPV",1 , 0, "08/05/2016",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
         insertarVacunas(sqLiteDatabase, new Vacuna(4, "PCV 10 VALENTE",1 , 0, "08/05/2016",
                 "BXAS22", "Marcos", "primera dosis", 1,1));
@@ -158,6 +160,56 @@ public class DB extends SQLiteOpenHelper {
                 null, null, "2do refuerzo", 1,0));
 
 
+        /*INSERTAR HIJO NUMERO 2*/
+
+        insertarVacunas(sqLiteDatabase, new Vacuna(1, "BCG",1 , 0, "08/03/2017",
+                "BXAS22", "Marcos", "unica dosis", 2,1));
+        insertarVacunas(sqLiteDatabase, new Vacuna(2, "ROTAVIRUS",1 , 0, "08/05/2017",
+                null, null, "primera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(3, "IPV",1 , 0, "08/05/2017",
+                null, null, "primera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(4, "PCV 10 VALENTE",1 , 0, "08/05/2017",
+                null, null, "primera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(5, "PENTAVALENTE",1 , 0, "08/05/2017",
+                null, null, "primera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(6, "OPV/IPV",2 , 0, "08/07/2017",
+                null, null, "segunda dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(7, "ROTAVIRUS",2 , 0, "08/07/2017",
+                null, null, "segunda dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(8, "PCV 10 VALENTE",2 , 0, "08/07/2017",
+                null, null, "segunda dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(9, "PENTAVALENTE",2 , 0, "08/07/2017",
+                null, null, "segunda dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(10, "OPV/IPV",3 , 0, "08/09/2017",
+                null, null, "tercera dosis",2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(11, "PENTAVALENTE",3 , 0, "08/09/2017",
+                null, null, "tercera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(12, "INFLUENZA 1RA",1 , 0, "08/09/2017",
+                null, null, "tercera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(13, "INFLUENZA 1RA",2 , 0, "08/09/2017",
+                null, null, "tercera dosis", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(14, "S.P.R",1 , 1, "08/03/2018",
+                null, null, "al 1 año", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(15, "PCV 10 REF",2 , 1, "08/03/2018",
+                null, null, "al 1 año", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(16, "AA",1 , 1, "08/03/2018",
+                null, null, "al 1 año", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(17, "INFLUENZA",3 , 1, "08/03/2018",
+                null, null, "al 1 año", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(18," V.V.Z",1 , 1, "08/06/2018",
+                null, null, "al año y 3 meses", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(19, " V.H.A",1 ,1, "08/06/2018",
+                null, null, "al año y 3 meses", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(20, "OPV/IPV",5 , 0, "08/09/2018",
+                null, null, "1er refuezo", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(21, "D.T.P",1 , 0, "08/09/2018",
+                null, null, "1er refuezo", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(22, "OPV/IPV",6 , 1, "08/03/2021",
+                null, null, "2do refuerzo", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(23, "D.T.P",2 , 1, "08/03/2021",
+                null, null, "2do refuerzo", 2,0));
+        insertarVacunas(sqLiteDatabase, new Vacuna(24, "S.P.R",2 , 4, "08/03/2021",
+                null, null, "2do refuerzo", 2,0));
 
 
 
@@ -203,6 +255,7 @@ public class DB extends SQLiteOpenHelper {
                 vac.setId_vacuna(registros.getInt(0));
                 vac.setNombre(registros.getString(1));
                 vac.setFecha(registros.getString(4));
+                vac.setDescripcion(registros.getString(7));
                 vac.setAplicada(registros.getInt(9));
                 lista.add(vac);
             }while(registros.moveToNext());
@@ -234,5 +287,25 @@ public class DB extends SQLiteOpenHelper {
         return lista;
 
     }
+
+
+
+    public String guardar(String bandera){
+        String mensaje="";
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues contenedor = new ContentValues();
+        contenedor.put("BANDERA",bandera);
+        try {
+            database.insertOrThrow("OK",null,contenedor);
+            mensaje="Ingresado Correctamente";
+        }catch (SQLException e){
+            mensaje="No Ingresado";
+        }
+        database.close();
+        return mensaje;
+    }
+
+
+
 }
 

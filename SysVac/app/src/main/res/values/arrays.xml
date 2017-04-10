@@ -2,7 +2,6 @@
 
 <resources>
     <string-array name="cabecera_tabla">
-        <item>ID Vacuna</item>
         <item>Nombre Vacuna</item>
         <item>Fecha a Aplicar</item>
         <item>Aplicada</item>

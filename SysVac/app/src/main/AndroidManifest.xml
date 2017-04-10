@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="example.com.sysvac">
+    <uses-sdk android:minSdkVersion="14" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -30,7 +33,7 @@
 
         <activity android:name=".MostrarDatos" />
         <activity android:name=".MostrarVacunas" />
-        <activity android:name=".Lista"/>
+        <activity android:name=".Lista"></activity>
     </application>
 
 </manifest>

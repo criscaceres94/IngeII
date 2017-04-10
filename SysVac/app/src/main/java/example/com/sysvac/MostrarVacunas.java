@@ -31,11 +31,11 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
         aux.setPosicion(0);
         listita.add(aux);
         aux=new Filtro();
-        aux.setNombre("Aplicadas");
+        aux.setNombre("No Aplicadas");
         aux.setPosicion(1);
         listita.add(aux);
         aux=new Filtro();
-        aux.setNombre("No Aplicadas");
+        aux.setNombre("Aplicadas");
         aux.setPosicion(2);
         listita.add(aux);
         aux=new Filtro();
@@ -79,7 +79,7 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
             for (int i = 0; i < tamano; i++) {
                 ArrayList<String> elementos = new ArrayList<String>();
                 //elementos.add(Integer.toString(i));
-                elementos.add(Integer.toString(elemento.get(i).getId_vacuna()));
+                //elementos.add(Integer.toString(elemento.get(i).getId_vacuna()));
                 elementos.add(elemento.get(i).getNombre());
                 elementos.add(elemento.get(i).getFecha());
                 if (elemento.get(i).getAplicada() == 0) {
