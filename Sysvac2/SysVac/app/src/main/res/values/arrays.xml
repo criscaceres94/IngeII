@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="cabecera_tabla">
+        <item>Nombre Vacuna</item>
+        <item>Fecha a Aplicar</item>
+        <item>Aplicada</item>
+    </string-array>
+</resources>
