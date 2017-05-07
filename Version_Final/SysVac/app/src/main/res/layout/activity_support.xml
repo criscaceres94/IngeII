@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_support"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@drawable/blue"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="example.com.sysvac.Support">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="188dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/datanotfound"
+            android:id="@+id/imageView"
+            android:layout_weight="0.25" />
+
+        <TextView
+            android:text="Su correo no se encuentra en la base de datos. "
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:id="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            tools:text="Su correo no se encuentra en la base de datos. "
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="normal|bold|italic"
+            tools:textStyle="normal|bold|italic"
+            android:layout_weight="0.27" />
+
+        <TextView
+            android:text="Contacte  a : snape727@gmail.com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:gravity="center"
+            android:textColor="@color/marron"
+            android:layout_weight="0.25"
+            tools:text="Contacte  a : snape727@gmail.com"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="Copyright © Todos los Derechos Reservado - 2017\nSysVac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:textColor="@color/dorado"
+            tools:text="Copyright © Todos los Derechos Reservado - 2017\nSysVac" />
+    </LinearLayout>
+</RelativeLayout>
