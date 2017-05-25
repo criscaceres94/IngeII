@@ -83,7 +83,7 @@ public class Utiles {
     }
 
     public abstract class  Uri {
-        public static final String ip="192.168.43.62";
+        public static final String ip="192.168.1.106";
         // retorna la lista  de Datos(Hijos) o solo un hijo depende de como se pase el parametro
         public static final String UriDatosLista ="http://"+ip+":8084/sysvac/webresources/datos";
         // retorna la lista de Datos(Hijos) de un usuario especifico

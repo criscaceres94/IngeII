@@ -100,6 +100,13 @@ public class Tabla {
 
         FILAS++;
     }
+
+
+    public void limpiar (){
+        for (int i = 0; i <filas.size() ; i++) {
+            tabla.removeView(filas.get(i));
+        }
+    }
     /**
      * Obtiene el ancho en píxeles de un texto en un String
      * @param texto Texto
@@ -114,4 +121,6 @@ public class Tabla {
         p.getTextBounds(texto, 0, texto.length(), bounds);
         return bounds.width();
     }
+
+
 }

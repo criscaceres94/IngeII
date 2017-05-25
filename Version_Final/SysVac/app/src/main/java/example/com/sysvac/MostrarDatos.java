@@ -72,14 +72,14 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
         clientesSpin = (Spinner) findViewById(R.id.combohijos);
         clientesSpin.setOnItemSelectedListener(this);
         id_usuario=getIntent().getExtras().getString("id_usuario");
-
+        //obtiene la lista de los hijos
         TareaWSListar tarea = new TareaWSListar();
         tarea.execute();
-
+        // obtiene la lista de los meses por grupo de vacunas dependiendo del hijo
         TareaWSVListarMes tarea2 = new TareaWSVListarMes();
         tarea2.execute();
 
-
+        // se carga el spinner
         ArrayAdapter<Hijo> dataAdapter = new ArrayAdapter<Hijo>(this, android.R.layout.simple_spinner_item, hijoList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clientesSpin.setAdapter(dataAdapter);
@@ -87,6 +87,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
 
     }
     public void llenar_lv1(){
+        //se carga un hijo en la primera posicion del array  ya que la primera posicion del spinner es vacio
         Hijo hijo = new Hijo();
         hijo.setId_hijo(0);
         hijo.setNombres("Nombres  ");
@@ -115,7 +116,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
             correoCli.setVisibility(View.INVISIBLE);
             telefonoCli.setVisibility(View.INVISIBLE);
         }
-        else{
+        else{//muestra los datos del hijo en version resumida
             tdireccionCli.setVisibility(View.VISIBLE);
             tcorreoCli.setVisibility(View.VISIBLE);
             ttelefonoCli.setVisibility(View.VISIBLE);
@@ -123,6 +124,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
             correoCli.setVisibility(View.VISIBLE);
             telefonoCli.setVisibility(View.VISIBLE);
         }
+        // carga los datos
         direccionCli.setText(((hijoList.get(position).getNombres() == null) ? ""
                 : hijoList.get(position).getNombres()));
         telefonoCli.setText(((hijoList.get(position).getFecha_nacimiento() ==null) ? ""
@@ -137,7 +139,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
-    public void siguiente1 (View v){
+    public void siguiente1 (View v){//boton que lleva a la actividad de mostrar vacunas por hijo
 
         if (clienteSeleccionado != null
                 & clienteSeleccionado != hijoList.get(0)){
@@ -150,7 +152,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(v.getContext(), "Debe seleccionar un hijo/a!", Toast.LENGTH_SHORT).show();
         }
     }
-    public void mostrarMas(View v){
+    public void mostrarMas(View v){//boton que muestra mas detalles del hijo seleccionado
         if (clienteSeleccionado != null
                 & clienteSeleccionado != hijoList.get(0)){
             Intent intento = new Intent(MostrarDatos.this, Lista.class);
@@ -180,12 +182,10 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
                     new HttpGet(Utiles.Uri.UriDatosUsuario+id_usuario);
 
             del.setHeader("content-type", "application/json");
-            // llena el primer elemento del spinner
             llenar_lv1();
             //
             try
             {
-
 
                 HttpResponse resp = httpClient.execute(del);
                 String respStr = EntityUtils.toString(resp.getEntity());
@@ -322,7 +322,7 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
         }
 
 
-        private void loadNotificaciones() {
+        private void loadNotificaciones() {//carga las notificaciones
         Utiles util = new Utiles();
 
         if ((hijoList.size())==(lista_final.size()+1)){
@@ -373,7 +373,8 @@ public class MostrarDatos extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-        ArrayList<Integer> obtenerMes(Integer id_hijo){
+        ArrayList<Integer> obtenerMes(Integer id_hijo){// obtiene la cantidad de meses restantes de un hijo para
+            // poder cargar las notificaciones restantes
 
             ArrayList<Integer> aux = new ArrayList<Integer>();
             for (int i=0;i<lista.size();i++){

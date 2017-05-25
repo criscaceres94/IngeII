@@ -1,5 +1,6 @@
 package example.com.sysvac;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,10 +31,10 @@ import example.com.sysvac.utilidades.Utiles;
  * Created by Belen Desvars on 15/3/2017.
  */
 public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    private Activity actividad=this;
     protected Spinner clientesSpin;
     ArrayList<Filtro> listita=new ArrayList<>();
-    ArrayList<Vacuna> vacunaList= new ArrayList<>();
+    ArrayList<Vacuna> vacunaList;
     public int orden;
     protected TableLayout tab;
     Tabla tabla;
@@ -49,7 +50,7 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clientesSpin.setAdapter(dataAdapter);
         tab = (TableLayout) findViewById(R.id.tabla);
-
+        //tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
 
     }
 
@@ -66,6 +67,7 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
 
 
         }
+        // instancia la tabla dinamica y remueve las filas para la proxima llmada
         tab.removeAllViews();
         tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
         orden=position;
@@ -83,6 +85,7 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void cargar(){
+        // se crea el filtro para el spinner
         Filtro aux=new Filtro();
         aux.setNombre("PRESIONE AQUI");
         aux.setPosicion(0);
@@ -122,26 +125,21 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
                         new HttpGet(Utiles.Uri.UriVacunas+"00000"); // default no retorna nada porque no existe
             }
             else {
-                if (orden == 1) {
+                if (orden == 1) {//aplicadas
                      del =  new HttpGet(Utiles.Uri.UriVacunas+getIntent().getExtras().getInt("parametro")+"/0");
 
                 } else {
-                    if (orden == 2) {
+                    if (orden == 2) {//no aplicadas
                          del =  new HttpGet(Utiles.Uri.UriVacunas+getIntent().getExtras().getInt("parametro")+"/1");
                     } else {
-                        if (orden == 3) {
+                        if (orden == 3) {//alfabeticamente
                             del =   new HttpGet(Utiles.Uri.UriVacunas+"ordenado/"+getIntent().getExtras().getInt("parametro"));
-                        } else {
+                        } else {//fecha
                             del =   new HttpGet(Utiles.Uri.UriVacunas+getIntent().getExtras().getInt("parametro"));
                         }
                     }
                 }
             }
-
-
-
-                //HttpGet del =
-                  //  new HttpGet("http://192.168.1.104:8084/jehe/webresources/datos/where/1");
 
             del.setHeader("content-type", "application/json");
             // llena el primer elemento del spinner
@@ -156,17 +154,18 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
 
                 JSONArray respJSON = new JSONArray(respStr);
 
-                //clientes = new String[respJSON.length()];
-
+                vacunaList= new ArrayList<>();
+                // se llena las vacunas obtenidas segun el filtro en un arrayList de vacunas
                 for(int i=0; i<respJSON.length(); i++)
                 {
                     JSONObject obj = respJSON.getJSONObject(i);
                     Vacuna vacuna;
+
                     vacuna= new Vacuna();
                     vacuna.setNombre(obj.getString("nombre"));
                     vacuna.setFecha(obj.getString("fecha"));
                     vacuna.setAplicada(obj.getInt("aplicada"));
-                    //nombreClientes.add(i,obj.getString("nombres") );
+
                     vacunaList.add(i, vacuna);
                 }
             }
@@ -187,13 +186,12 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
         protected void onPostExecute(Boolean result) {
 
             if (result)
-            {   tab.removeAllViews();
+            {   //se carga los elementos en la tabla dependiendo del filtro
+
                 int tamano = vacunaList.size();
                 tabla.agregarCabecera(R.array.cabecera_tabla);
                 for (int i = 0; i < tamano; i++) {
                     ArrayList<String> elementos = new ArrayList<String>();
-                    //elementos.add(Integer.toString(i));
-                    //elementos.add(Integer.toString(elemento.get(i).getId_vacuna()));
                     elementos.add(vacunaList.get(i).getNombre());
                     elementos.add(vacunaList.get(i).getFecha());
                     if (vacunaList.get(i).getAplicada() == 0) {
