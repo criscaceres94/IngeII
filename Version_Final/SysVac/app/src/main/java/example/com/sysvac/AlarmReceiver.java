@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 
@@ -52,6 +54,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                     .setContentText("Vacuna pendiente. " +  texto);
         Intent resultIntent = new Intent(context, MostrarVacunas.class);
         resultIntent.putExtra("parametro", id);
+        resultIntent.putExtra("noti",true);
         resultIntent.setAction(nombre+String.valueOf(mes));
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addParentStack(MostrarVacunas.class);
@@ -61,6 +64,12 @@ public class AlarmReceiver extends BroadcastReceiver {
         mBuilder.setContentIntent(resultPendingIntent);
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mBuilder.setAutoCancel(true);
+        long[] pattern = new long[]{1000,500,1000};
+        Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        mBuilder.setSound(defaultSound);
+
+        mBuilder.setVibrate(pattern);
         mNotificationManager.notify(random, mBuilder.build());
     }
 }

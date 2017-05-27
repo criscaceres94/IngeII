@@ -166,7 +166,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Mostrar mas"
+                    android:text="Mostrar mas Datos"
                     android:theme="@style/ThemeOverlay.MyDarkButton" />
 
                 <Button
@@ -175,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/siguiente"
-                    android:text="Siguiente"
+                    android:text="Mostrar    Vacunas "
                     android:theme="@style/ThemeOverlay.MyDarkButton"/>
 
             </LinearLayout>

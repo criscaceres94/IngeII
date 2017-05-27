@@ -21,6 +21,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import example.com.sysvac.entidades.Vacuna;
 import example.com.sysvac.utilidades.Filtro;
@@ -38,6 +40,7 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
     public int orden;
     protected TableLayout tab;
     Tabla tabla;
+    protected boolean notifi = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,9 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
         ArrayAdapter<Filtro> dataAdapter = new ArrayAdapter<Filtro>(this, android.R.layout.simple_spinner_item, listita);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clientesSpin.setAdapter(dataAdapter);
+        notifi=getIntent().getExtras().getBoolean("noti");
+        if(notifi){
+        clientesSpin.setSelection(1);}
         tab = (TableLayout) findViewById(R.id.tabla);
         //tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
 
@@ -187,7 +193,13 @@ public class MostrarVacunas extends AppCompatActivity implements AdapterView.OnI
 
             if (result)
             {   //se carga los elementos en la tabla dependiendo del filtro
-
+                if (orden==3){
+                    Collections.sort(vacunaList, new Comparator<Vacuna>() {
+                        public int compare(Vacuna obj1, Vacuna obj2) {
+                            return obj1.getNombre().compareTo(obj2.getNombre());
+                        }
+                    });
+                }
                 int tamano = vacunaList.size();
                 tabla.agregarCabecera(R.array.cabecera_tabla);
                 for (int i = 0; i < tamano; i++) {
